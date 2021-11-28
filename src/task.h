@@ -1,26 +1,31 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 #include <string>
 
 class Task {
 	std::string name;
-	int period;
-	int deadline;
-	int duration;
+	unsigned int period;
+	unsigned int deadline;
+	unsigned int duration;
 
 public:
 	Task();
-	Task(const std::string &nm, int pr, int dl, int dr);
-	Task(std::string &&nm, int pr, int dl, int dr);
+	Task(const std::string &nm, unsigned int pr, unsigned int dl,
+		 unsigned int dr);
+	Task(std::string &&nm, unsigned int pr, unsigned int dl, unsigned int dr);
 	Task(const Task &tsk);
 
-	const std::string get_name() const;
-	int get_period() const;
-	int get_deadline() const;
-	int get_duration() const;
+	std::string get_name() const;
+	unsigned int get_period() const;
+	unsigned int get_deadline() const;
+	unsigned int get_duration() const;
 
-	Task &operator-();
-	bool operator<(const Task &tsk) const;
 	friend std::ostream &operator<<(std::ostream &os, const Task &tsk);
+
+	static std::vector<unsigned int>
+	get_periods(std::vector <Task> &tasks);
+	static std::vector<unsigned int>
+	get_deadlines(std::vector <Task> &tasks);
 };
