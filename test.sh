@@ -1,5 +1,5 @@
 #!/bin/bash
-PROG=${1:-"../../src/edf"}
+PROG=${1:-"../../src/prog_02200166_621"}
 echo "$PROG"
 make || exit 1
   cd testdata_EDF

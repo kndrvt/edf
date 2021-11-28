@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -g -Wall -std=c++17
-TARGET = edf
+TARGET = prog_02200166_621
 OBJECTS = main.o task.o tinyxml.o tinystr.o tinyxmlerror.o tinyxmlparser.o
 FILENAME="input.xml"
 
